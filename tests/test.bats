@@ -12,9 +12,9 @@ setup() {
 }
 
 health_checks() {
-  # Do something useful here that verifies the add-on
-  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-  ddev exec "curl -s https://localhost:443/"
+  # Make sure the tools this addon adds work
+  ddev exec "/opt/fzf/bin/fzf --version"
+  ddev exec "zoxide --help"
 }
 
 teardown() {
@@ -32,13 +32,3 @@ teardown() {
   ddev restart
   health_checks
 }
-
-@test "install from release" {
-  set -eu -o pipefail
-  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get ddev/ddev-addon-template with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get ddev/ddev-addon-template
-  ddev restart >/dev/null
-  health_checks
-}
-

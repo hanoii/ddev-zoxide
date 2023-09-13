@@ -1,0 +1,5 @@
+#ddev-generated
+webimage_extra_packages: [bash-completion]
+hooks:
+  post-start:
+    - exec: '/opt/fzf/install --no-bin --key-bindings --completion --update-rc'
