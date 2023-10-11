@@ -1,7 +1,5 @@
 #ddev-generated
 
-[ -f /opt/.fzf.bash ] && source /opt/.fzf.bash
-
 _ZO_DATA_DIR=/mnt/ddev-global-cache/zoxide/${HOSTNAME}
 mkdir -p ${_ZO_DATA_DIR}
 export _ZO_DATA_DIR

@@ -1,3 +1,2 @@
 #ddev-generated
 RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/073500cbdf8ba211e5115fc6e51411cf2468fc5b/install.sh | HOME=/opt/zoxide bash && cp -R /opt/zoxide/.local/* /usr/local && rm -fr /opt/zoxide
-RUN mkdir -p /opt/fzf && cd /opt/fzf && git init && git remote add origin https://github.com/junegunn/fzf.git && git fetch --depth 1 origin 073500cbdf8ba211e5115fc6e51411cf2468fc5b && git checkout FETCH_HEAD && /opt/fzf/install --all && cp /root/.fzf.bash /opt
